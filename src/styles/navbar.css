@@ -1,0 +1,27 @@
+.nav-item-container {
+   list-style-type: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+   gap: 1rem;
+}
+
+.nav-item {
+   border: 2px solid #fff;
+   border-radius: 5px;
+   padding: 5px;
+   padding-right: 10px;
+   padding-left: 10px;
+   cursor: pointer;
+}
+
+.nav-item:hover {
+   border: 2px solid #ffffffc4;
+   border-radius: 5px;
+   background-color: #ffffffc4;
+   color: #000;
+   padding: 5px;
+   padding-right: 10px;
+   padding-left: 10px;
+}

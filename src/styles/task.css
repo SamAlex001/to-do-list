@@ -1,0 +1,21 @@
+.task-container {
+   list-style-type: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.task-list-item {
+   border: 1px solid #ffffff00;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding: 5px;
+   font-size: 1.3rem;
+   cursor: pointer;
+}
+
+.task-list-item:hover {
+   border: 1px solid #ffffff44;
+}
