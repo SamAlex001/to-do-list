@@ -6,13 +6,16 @@ export const TaskContext = createContext();
 
 const App = () => {
 
-   const [tasks, setTasks] = useState([]);
-   const [selectTask, setSelectTask] = useState(false);
-   const [addTask, setAddTask] = useState(false);
-   const [taskIndex, setTaskIndex] = useState(null);
+   const [taskArray, setTaskArray] = useState([]);
+   const [taskID, setTaskID] = useState(null);
+   const [editing, setEditing] = useState(false);
 
    return (
-      <TaskContext.Provider value={{ tasks, setTasks, selectTask, setSelectTask, addTask, setAddTask, taskIndex, setTaskIndex }}>
+      <TaskContext.Provider value={{
+         taskArray, setTaskArray,
+         taskID, setTaskID,
+         editing, setEditing
+      }}>
          <div>
             <NavBar />
             <Task />

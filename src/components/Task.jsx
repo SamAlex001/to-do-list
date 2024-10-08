@@ -4,35 +4,30 @@ import "../styles/task.css";
 
 export const Task = () => {
 
-   const { addTask, setAddTask, tasks, selectTask, setSelectTask, taskIndex, setTaskIndex } = useContext(TaskContext);
+   const { taskArray, setTaskArray, taskID, setTaskID } = useContext(TaskContext);
    const [taskClicked, setTaskClicked] = useState(false);
-   const [taskList, setTaskList] = useState([...tasks]);
-   
-   useEffect(() => {
-      if (addTask !== true) setAddTask(true); // automatically sets addTask to false if true
-   }, []);
+   const [clickedTaskId, setClickedTaskId] = useState(null);
 
-
-   function handleTaskClick(index) {
-      // setTaskIndex(index);
+   function handleTask(taskId) {
       setTaskClicked(!taskClicked);
-      setSelectTask(!selectTask);
+      setClickedTaskId(taskId === setTaskID(taskId) && clickedTaskId ? null : taskId);
+      // console.log(taskId)
    }
 
    return (
       <>
          <ul className="task-container">
-            {(tasks.map((task, indx) => (
-               <li key={indx} className="task-list-item"
-                  onClick={handleTaskClick}
-                  style={{
-                     border: taskClicked ? "1px solid #ffffff" : "",
-                     paddingLeft: "10px",
-                     paddingRight: "10px",
-                     padding: "5px",
-                  }}
-               >{task}</li>)))}
-         </ul>
+            {taskArray.map((value, taskId) => (
+               <li
+                  key={taskId}
+                  className={`task-list-item ${clickedTaskId === taskId ? "clicked" : ""
+                     }`}
+                  onClick={() => handleTask(taskId)}
+               >
+                  {value}
+               </li>
+            ))}
+         </ul >
       </>
    )
 }

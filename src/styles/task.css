@@ -16,6 +16,20 @@
    cursor: pointer;
 }
 
-.task-list-item:hover {
-   border: 1px solid #ffffff44;
+.task-list-item:not(.clicked):hover {
+   border: 1px solid #ffffff3b;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding: 5px;
+   font-size: 1.3rem;
+   cursor: pointer;
+}
+
+.task-list-item.clicked {
+   border: 1px solid #ffffff;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding: 5px;
+   font-size: 1.3rem;
+   cursor: pointer;
 }
